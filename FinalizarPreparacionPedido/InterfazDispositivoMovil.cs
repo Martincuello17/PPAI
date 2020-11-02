@@ -19,6 +19,7 @@ namespace FinalizarPreparacionPedido
         public void notificar(string numeroMesa, int cantidad)
         {
             dgvPedidosEnPreparacion.Rows.Add(numeroMesa, cantidad);
+            Console.Beep();
         }
         public InterfazDispositivoMovil(ISujetoDetallePedido sujeto)
         {
