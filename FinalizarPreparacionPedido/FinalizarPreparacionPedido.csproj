@@ -47,11 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DetallePedido.cs" />
-    <Compile Include="formFinalizarPreparacion.cs">
+    <Compile Include="GestorFinalizarPreparacionPedido.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Mesa.cs" />
+    <Compile Include="PantallaFinalizarPreparacionPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formFinalizarPreparacion.Designer.cs">
-      <DependentUpon>formFinalizarPreparacion.cs</DependentUpon>
+    <Compile Include="PantallaFinalizarPreparacionPedido.Designer.cs">
+      <DependentUpon>PantallaFinalizarPreparacionPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="InterfazDispositivoMovil.cs">
       <SubType>Form</SubType>
@@ -66,10 +69,12 @@
       <DependentUpon>InterfazMonitor.cs</DependentUpon>
     </Compile>
     <Compile Include="ISujetoDetallePedido.cs" />
+    <Compile Include="Pedido.cs" />
+    <Compile Include="Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formFinalizarPreparacion.resx">
-      <DependentUpon>formFinalizarPreparacion.cs</DependentUpon>
+    <EmbeddedResource Include="PantallaFinalizarPreparacionPedido.resx">
+      <DependentUpon>PantallaFinalizarPreparacionPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazDispositivoMovil.resx">
       <DependentUpon>InterfazDispositivoMovil.cs</DependentUpon>

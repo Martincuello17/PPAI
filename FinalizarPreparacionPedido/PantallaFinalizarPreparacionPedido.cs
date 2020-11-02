@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FinalizarPreparacionPedido
 {
-    public partial class formFinalizarPreparacion : Form, ISujetoDetallePedido
+    public partial class PantallaFinalizarPreparacionPedido : Form, ISujetoDetallePedido
     {
-        public formFinalizarPreparacion()
+        public PantallaFinalizarPreparacionPedido()
         {
             InitializeComponent();
             cargarGrilla();
@@ -41,7 +41,6 @@ namespace FinalizarPreparacionPedido
                         obs.notificar(dgvPedidosEnPreparacion.Rows[j].Cells[4].Value.ToString(), int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[3].Value.ToString()));
                         dgvPedidosEnPreparacion.Rows[j].Visible = false;
                     }
-                    
                 } 
             }
         }
