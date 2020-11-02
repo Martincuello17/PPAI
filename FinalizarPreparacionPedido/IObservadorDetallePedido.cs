@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FinalizarPreparacionPedido
 {
-    public interface ISujetoDetallePedido
+    public interface IObservadorDetallePedido
     {
-        void suscribir(IObservadorDetallePedido obs);
+        void actualizar(int numeroMesa, int cantidadProducto);
     }
 }
