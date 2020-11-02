@@ -32,12 +32,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblFinalizarPreparacionPedido = new System.Windows.Forms.Label();
             this.dgvPedidosEnPreparacion = new System.Windows.Forms.DataGridView();
+            this.NumeroMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.NumeroMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosEnPreparacion)).BeginInit();
@@ -87,8 +87,23 @@
             this.Cantidad});
             this.dgvPedidosEnPreparacion.Location = new System.Drawing.Point(65, 93);
             this.dgvPedidosEnPreparacion.Name = "dgvPedidosEnPreparacion";
+            this.dgvPedidosEnPreparacion.ReadOnly = true;
             this.dgvPedidosEnPreparacion.Size = new System.Drawing.Size(655, 296);
             this.dgvPedidosEnPreparacion.TabIndex = 9;
+            // 
+            // NumeroMesa
+            // 
+            this.NumeroMesa.HeaderText = "Número de mesa";
+            this.NumeroMesa.Name = "NumeroMesa";
+            this.NumeroMesa.ReadOnly = true;
+            this.NumeroMesa.Width = 300;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 300;
             // 
             // panel3
             // 
@@ -129,18 +144,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(818, 78);
             this.panel5.TabIndex = 10;
-            // 
-            // NumeroMesa
-            // 
-            this.NumeroMesa.HeaderText = "Número de mesa";
-            this.NumeroMesa.Name = "NumeroMesa";
-            this.NumeroMesa.Width = 300;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 300;
             // 
             // InterfazMonitor
             // 

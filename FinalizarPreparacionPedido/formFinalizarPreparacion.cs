@@ -38,16 +38,12 @@ namespace FinalizarPreparacionPedido
                 {
                     for (int i = 0; i < observador.Count; i++)
                     {
-                    IObservadorDetallePedido obs = (IObservadorDetallePedido)observador[i];
-                    
-                        obs.notificar(dgvPedidosEnPreparacion.Rows[j].Cells[4].Value.ToString(), int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[3].Value.ToString()));   
+                        IObservadorDetallePedido obs = (IObservadorDetallePedido)observador[i];
+
+                        obs.notificar(dgvPedidosEnPreparacion.Rows[j].Cells[4].Value.ToString(), int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[3].Value.ToString()));
                     }
+                    dgvPedidosEnPreparacion.Rows[j].Visible = false;
                 } 
-            }
-            for (int j = 0; j < dgvPedidosEnPreparacion.Rows.Count; j++)
-            {
-                if ((bool)dgvPedidosEnPreparacion.Rows[j].Cells[0].Value)
-                    dgvPedidosEnPreparacion.Rows.RemoveAt(j);
             }
         }
 
@@ -65,6 +61,12 @@ namespace FinalizarPreparacionPedido
         private void btnFinalizarPedidos_Click(object sender, EventArgs e)
         {
             seleccionar();
+        }
+
+        private void btnFinalizarPreparacion_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = true;
+            panel4.Visible = true;
         }
     }
 }

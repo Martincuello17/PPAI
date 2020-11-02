@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnIniciarPreparacion = new System.Windows.Forms.Button();
             this.btnFinalizarPreparacion = new System.Windows.Forms.Button();
@@ -43,18 +44,18 @@
             this.btnFinalizarPedidos = new System.Windows.Forms.Button();
             this.cmbOrden = new System.Windows.Forms.ComboBox();
             this.dgvPedidosEnPreparacion = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblSeleccionepedidos = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lblFechaActual = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Listo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreMenu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblSeleccionepedidos = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblFechaActual = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -62,7 +63,6 @@
             this.groupBox1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,6 +73,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(919, 59);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FinalizarPreparacionPedido.Properties.Resources.logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -111,6 +121,7 @@
             this.btnFinalizarPreparacion.TabIndex = 4;
             this.btnFinalizarPreparacion.Text = "Finalizar preparacion";
             this.btnFinalizarPreparacion.UseVisualStyleBackColor = false;
+            this.btnFinalizarPreparacion.Click += new System.EventHandler(this.btnFinalizarPreparacion_Click);
             // 
             // btnPedidos
             // 
@@ -168,6 +179,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(668, 37);
             this.panel3.TabIndex = 2;
+            this.panel3.Visible = false;
             // 
             // lblFinalizarPreparacionPedido
             // 
@@ -192,6 +204,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(668, 406);
             this.panel4.TabIndex = 3;
+            this.panel4.Visible = false;
             // 
             // btnCancelar
             // 
@@ -240,68 +253,6 @@
             this.dgvPedidosEnPreparacion.Size = new System.Drawing.Size(652, 271);
             this.dgvPedidosEnPreparacion.TabIndex = 1;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblSeleccionepedidos);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 8);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(649, 51);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pedidos \"En Preparación\":";
-            // 
-            // lblSeleccionepedidos
-            // 
-            this.lblSeleccionepedidos.AutoSize = true;
-            this.lblSeleccionepedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeleccionepedidos.Location = new System.Drawing.Point(7, 20);
-            this.lblSeleccionepedidos.Name = "lblSeleccionepedidos";
-            this.lblSeleccionepedidos.Size = new System.Drawing.Size(263, 17);
-            this.lblSeleccionepedidos.TabIndex = 0;
-            this.lblSeleccionepedidos.Text = "Seleccione los pedidos finalizados:";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
-            this.panel5.Controls.Add(this.pictureBox2);
-            this.panel5.Controls.Add(this.lblFechaActual);
-            this.panel5.Location = new System.Drawing.Point(-1, 539);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(919, 78);
-            this.panel5.TabIndex = 4;
-            // 
-            // lblFechaActual
-            // 
-            this.lblFechaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaActual.ForeColor = System.Drawing.Color.Yellow;
-            this.lblFechaActual.Location = new System.Drawing.Point(775, 24);
-            this.lblFechaActual.Name = "lblFechaActual";
-            this.lblFechaActual.Size = new System.Drawing.Size(118, 31);
-            this.lblFechaActual.TabIndex = 0;
-            this.lblFechaActual.Text = "Fecha: 13/10/2020 Hora: 16:32";
-            this.lblFechaActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::FinalizarPreparacionPedido.Properties.Resources.logo2;
-            this.pictureBox2.Location = new System.Drawing.Point(440, 16);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(49, 49);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FinalizarPreparacionPedido.Properties.Resources.logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // Listo
             // 
             this.Listo.HeaderText = "Listo";
@@ -333,6 +284,58 @@
             this.NumeroMesa.Name = "NumeroMesa";
             this.NumeroMesa.Width = 150;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblSeleccionepedidos);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(16, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(649, 51);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Pedidos \"En Preparación\":";
+            // 
+            // lblSeleccionepedidos
+            // 
+            this.lblSeleccionepedidos.AutoSize = true;
+            this.lblSeleccionepedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeleccionepedidos.Location = new System.Drawing.Point(7, 20);
+            this.lblSeleccionepedidos.Name = "lblSeleccionepedidos";
+            this.lblSeleccionepedidos.Size = new System.Drawing.Size(263, 17);
+            this.lblSeleccionepedidos.TabIndex = 0;
+            this.lblSeleccionepedidos.Text = "Seleccione los pedidos finalizados:";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
+            this.panel5.Controls.Add(this.pictureBox2);
+            this.panel5.Controls.Add(this.lblFechaActual);
+            this.panel5.Location = new System.Drawing.Point(-1, 539);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(919, 78);
+            this.panel5.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::FinalizarPreparacionPedido.Properties.Resources.logo2;
+            this.pictureBox2.Location = new System.Drawing.Point(440, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(49, 49);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblFechaActual
+            // 
+            this.lblFechaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaActual.ForeColor = System.Drawing.Color.Yellow;
+            this.lblFechaActual.Location = new System.Drawing.Point(775, 24);
+            this.lblFechaActual.Name = "lblFechaActual";
+            this.lblFechaActual.Size = new System.Drawing.Size(118, 31);
+            this.lblFechaActual.TabIndex = 0;
+            this.lblFechaActual.Text = "Fecha: 13/10/2020 Hora: 16:32";
+            this.lblFechaActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // formFinalizarPreparacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,6 +351,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Finalizar Preparacion";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -357,7 +361,6 @@
             this.groupBox1.PerformLayout();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
