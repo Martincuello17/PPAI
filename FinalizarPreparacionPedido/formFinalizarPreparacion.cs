@@ -10,11 +10,61 @@ using System.Windows.Forms;
 
 namespace FinalizarPreparacionPedido
 {
-    public partial class formFinalizarPreparacion : Form
+    public partial class formFinalizarPreparacion : Form, ISujetoDetallePedido
     {
         public formFinalizarPreparacion()
         {
             InitializeComponent();
+            cargarGrilla();
+            InterfazDispositivoMovil interfazMozo = new InterfazDispositivoMovil(this);
+            interfazMozo.Show();
+            InterfazMonitor interfazMonitor = new InterfazMonitor(this);
+            interfazMonitor.Show();
+        }
+        public List<IObservadorDetallePedido> observador = new List<IObservadorDetallePedido>();
+
+        public void suscribir(IObservadorDetallePedido obs)
+        {
+            observador.Add(obs);
+        }
+        
+        public void seleccionar()
+        {
+
+            for (int j = 0; j < dgvPedidosEnPreparacion.Rows.Count; j++)
+            {
+                List<int> final = new List<int>();
+                if ((bool)dgvPedidosEnPreparacion.Rows[j].Cells[0].Value)
+                {
+                    for (int i = 0; i < observador.Count; i++)
+                    {
+                    IObservadorDetallePedido obs = (IObservadorDetallePedido)observador[i];
+                    
+                        obs.notificar(dgvPedidosEnPreparacion.Rows[j].Cells[4].Value.ToString(), int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[3].Value.ToString()));   
+                    }
+                } 
+            }
+            for (int j = 0; j < dgvPedidosEnPreparacion.Rows.Count; j++)
+            {
+                if ((bool)dgvPedidosEnPreparacion.Rows[j].Cells[0].Value)
+                    dgvPedidosEnPreparacion.Rows.RemoveAt(j);
+            }
+        }
+
+
+        public void cargarGrilla()
+        {
+            dgvPedidosEnPreparacion.Rows.Add(false,"Sorrentino","No Aplica",1, 5 + "-" + 6);
+            dgvPedidosEnPreparacion.Rows.Add(false, "Zapallitos", "Veggie", 3, "3");
+            dgvPedidosEnPreparacion.Rows.Add(false, "Matambre", "Sabor a campo", 2, 4);
+            dgvPedidosEnPreparacion.Rows.Add(false, "Langostinos", "Un toque marino", 5, 7 + "-" + 8);
+            dgvPedidosEnPreparacion.Rows.Add(false, "Bondiola", "De la abuela", 7, "10");
+            dgvPedidosEnPreparacion.Rows.Add(false, "Flan", "No Aplica", 5, "11");
+        }
+
+        private void btnFinalizarPedidos_Click(object sender, EventArgs e)
+        {
+            seleccionar();
         }
     }
 }

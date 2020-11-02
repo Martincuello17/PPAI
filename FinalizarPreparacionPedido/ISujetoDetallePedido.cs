@@ -12,6 +12,6 @@ namespace FinalizarPreparacionPedido
     }
     public interface IObservadorDetallePedido
     {
-        void notificar(string mensaje);
+        void notificar(string numeroMesa, int cantidadMesa);
     }
 }

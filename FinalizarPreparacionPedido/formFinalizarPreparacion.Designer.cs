@@ -47,22 +47,28 @@
             this.lblSeleccionepedidos = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblFechaActual = new System.Windows.Forms.Label();
-            this.Listo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Listo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreMenu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosEnPreparacion)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(4)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(919, 59);
@@ -156,7 +162,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
             this.panel3.Controls.Add(this.lblFinalizarPreparacionPedido);
             this.panel3.Location = new System.Drawing.Point(227, 85);
             this.panel3.Name = "panel3";
@@ -206,6 +212,7 @@
             this.btnFinalizarPedidos.TabIndex = 3;
             this.btnFinalizarPedidos.Text = "Finalizar Pedidos";
             this.btnFinalizarPedidos.UseVisualStyleBackColor = true;
+            this.btnFinalizarPedidos.Click += new System.EventHandler(this.btnFinalizarPedidos_Click);
             // 
             // cmbOrden
             // 
@@ -256,7 +263,8 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.Black;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
+            this.panel5.Controls.Add(this.pictureBox2);
             this.panel5.Controls.Add(this.lblFechaActual);
             this.panel5.Location = new System.Drawing.Point(-1, 539);
             this.panel5.Name = "panel5";
@@ -274,10 +282,32 @@
             this.lblFechaActual.Text = "Fecha: 13/10/2020 Hora: 16:32";
             this.lblFechaActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::FinalizarPreparacionPedido.Properties.Resources.logo2;
+            this.pictureBox2.Location = new System.Drawing.Point(440, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(49, 49);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FinalizarPreparacionPedido.Properties.Resources.logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // Listo
             // 
             this.Listo.HeaderText = "Listo";
             this.Listo.Name = "Listo";
+            this.Listo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Listo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Listo.Width = 35;
             // 
             // NombreProducto
@@ -317,6 +347,7 @@
             this.Name = "formFinalizarPreparacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Finalizar Preparacion";
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -325,6 +356,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,7 +383,9 @@
         private System.Windows.Forms.Button btnFinalizarPreparacion;
         private System.Windows.Forms.Button btnIniciarPreparacion;
         private System.Windows.Forms.Label lblFinalizarPreparacionPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Listo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Listo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreMenu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
