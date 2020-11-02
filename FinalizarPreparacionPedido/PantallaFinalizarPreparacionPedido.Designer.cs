@@ -1,6 +1,6 @@
 ﻿namespace FinalizarPreparacionPedido
 {
-    partial class formFinalizarPreparacion
+    partial class PantallaFinalizarPreparacionPedido
     {
         /// <summary>
         /// Variable del diseñador necesaria.

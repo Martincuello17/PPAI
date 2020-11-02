@@ -16,7 +16,7 @@ namespace FinalizarPreparacionPedido
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formFinalizarPreparacion());
+            Application.Run(new PantallaFinalizarPreparacionPedido());
         }
     }
 }
