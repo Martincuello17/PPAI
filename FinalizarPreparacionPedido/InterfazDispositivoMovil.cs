@@ -12,19 +12,26 @@ namespace FinalizarPreparacionPedido
 {
     public partial class InterfazDispositivoMovil : Form, IObservadorDetallePedido
     {
+        public int cantidadProductos { get; set; }
+        public int numeroMesa { get; set; }
         public void suscribir(ISujetoDetallePedido sujeto)
         {
             sujeto.suscribir(this);
         }
-        public void notificar(string numeroMesa, int cantidad)
+
+        public void actualizar(int numeroMesa, int cantidadProducto)
         {
-            dgvPedidosEnPreparacion.Rows.Add(numeroMesa, cantidad);
+            this.cantidadProductos = cantidadProducto;
+            this.numeroMesa = numeroMesa;
+            dgvPedidosEnPreparacion.Rows.Add(numeroMesa, cantidadProducto);
             Console.Beep();
         }
+
         public InterfazDispositivoMovil(ISujetoDetallePedido sujeto)
         {
             InitializeComponent();
             suscribir(sujeto);
+
         }
     }
 }

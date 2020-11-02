@@ -336,7 +336,7 @@
             this.lblFechaActual.Text = "Fecha: 13/10/2020 Hora: 16:32";
             this.lblFechaActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // formFinalizarPreparacion
+            // PantallaFinalizarPreparacionPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -347,9 +347,10 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "formFinalizarPreparacion";
+            this.Name = "PantallaFinalizarPreparacionPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Finalizar Preparacion";
+            this.Load += new System.EventHandler(this.PantallaFinalizarPreparacionPedido_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);

@@ -12,11 +12,13 @@ namespace FinalizarPreparacionPedido
 {
     public partial class InterfazMonitor : Form, IObservadorDetallePedido
     {
+        public int cantidadProductos { get; set; }
+        public int numeroMesa { get; set; }
         public void suscribir(ISujetoDetallePedido sujeto)
         {
             sujeto.suscribir(this);
         }
-        public void notificar(string numeroMesa, int cantidad)
+        public void notificar(int numeroMesa, int cantidad)
         {
             dgvPedidosEnPreparacion.Rows.Add(numeroMesa, cantidad);
         }
@@ -29,6 +31,13 @@ namespace FinalizarPreparacionPedido
         private void InterfazMonitor_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void actualizar(int numeroMesa, int cantidadProducto)
+        {
+            this.cantidadProductos = cantidadProducto;
+            this.numeroMesa = numeroMesa;
+            dgvPedidosEnPreparacion.Rows.Add(numeroMesa, cantidadProducto);
         }
     }
 }

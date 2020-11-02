@@ -13,7 +13,12 @@ namespace FinalizarPreparacionPedido
         public string[] datosPedidosNotificados { get; set; }
         public string[] datosPedidoSeleccionadosAServir { get; set; }
         public int numeroMesa { get; set; }
-        public List<IObservadorDetallePedido> observadores = new List<IObservadorDetallePedido>();
+        public List<IObservadorDetallePedido> observadores { get; set; }
+
+        public GestorFinalizarPreparacionPedido()
+        {
+        }
+
         public void suscribir(IObservadorDetallePedido obs)
         {
             observadores.Add(obs);
@@ -21,21 +26,24 @@ namespace FinalizarPreparacionPedido
 
         public void confirmarcionElaboracion()
         {
-            //publicarDetPedidoAServir();
+            publicarDetPedidoAServir((IObservadorDetallePedido)observadores);
         }
 
         public void publicarDetPedidoAServir(IObservadorDetallePedido observadores)
         {
             suscribir(observadores);
+            notificar();
         }
 
         public void notificar()
         {
             for (int i = 0; i < observadores.Count; i++)
             {
-                //observadores[i].actualizar(numeroMesa, cantidadProducto);
+                observadores[i].actualizar(numeroMesa, cantidadProducto);
             }
         }
+
+
 
     }
 }

@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DetallePedido.cs" />
     <Compile Include="GestorFinalizarPreparacionPedido.cs" />
+    <Compile Include="IObservadorDetallePedido.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Mesa.cs" />
     <Compile Include="PantallaFinalizarPreparacionPedido.cs">
