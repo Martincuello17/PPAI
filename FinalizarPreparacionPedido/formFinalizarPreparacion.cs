@@ -31,18 +31,17 @@ namespace FinalizarPreparacionPedido
         public void seleccionar()
         {
 
-            for (int j = 0; j < dgvPedidosEnPreparacion.Rows.Count; j++)
+            for (int i = 0; i < observador.Count; i++)
             {
-                List<int> final = new List<int>();
-                if ((bool)dgvPedidosEnPreparacion.Rows[j].Cells[0].Value)
+                IObservadorDetallePedido obs = (IObservadorDetallePedido)observador[i];
+                for (int j = 0; j < dgvPedidosEnPreparacion.Rows.Count; j++)
                 {
-                    for (int i = 0; i < observador.Count; i++)
+                    if ((bool)dgvPedidosEnPreparacion.Rows[j].Cells[0].Value && dgvPedidosEnPreparacion.Rows[j].Visible)
                     {
-                        IObservadorDetallePedido obs = (IObservadorDetallePedido)observador[i];
-
                         obs.notificar(dgvPedidosEnPreparacion.Rows[j].Cells[4].Value.ToString(), int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[3].Value.ToString()));
+                        dgvPedidosEnPreparacion.Rows[j].Visible = false;
                     }
-                    dgvPedidosEnPreparacion.Rows[j].Visible = false;
+                    
                 } 
             }
         }
