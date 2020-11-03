@@ -10,44 +10,24 @@ using System.Windows.Forms;
 
 namespace FinalizarPreparacionPedido
 {
-    public partial class PantallaFinalizarPreparacionPedido : Form, ISujetoDetallePedido
+    public partial class PantallaFinalizarPreparacionPedido : Form//, ISujetoDetallePedido
     {
-        public InterfazMonitor interfazMonitor { get; set; }
-        public InterfazDispositivoMovil interfazDispositivoMovil { get; set; }
         public PantallaFinalizarPreparacionPedido()
         {
             InitializeComponent();
             cargarGrilla();
-            InterfazDispositivoMovil interfazDispositivoMovil = new InterfazDispositivoMovil(this);
-            interfazDispositivoMovil.Show();
-            InterfazMonitor interfazMonitor = new InterfazMonitor(this);
-            interfazMonitor.Show();
-            Console.WriteLine("Las instancias de los observadores fueron creadas previamente.");
-            this.interfazMonitor = interfazMonitor;
-            this.interfazDispositivoMovil = interfazDispositivoMovil;
         }
-        public List<IObservadorDetallePedido> observador = new List<IObservadorDetallePedido>();
-       
-        public void suscribir(IObservadorDetallePedido obs)
-        {
-            observador.Add(obs);
-        }
+        public GestorFinalizarPreparacionPedido gestor = new GestorFinalizarPreparacionPedido();
         
         public void tomarOpcionFinalizarPedido()
         {
-
-            for (int i = 0; i < observador.Count; i++)
-            {
-                IObservadorDetallePedido obs = (IObservadorDetallePedido)observador[i];
                 for (int j = 0; j < dgvPedidosEnPreparacion.Rows.Count; j++)
                 {
                     if ((bool)dgvPedidosEnPreparacion.Rows[j].Cells[0].Value && dgvPedidosEnPreparacion.Rows[j].Visible)
                     {
-                        //obs.notificar(int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[4].Value.ToString()), int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[3].Value.ToString()));
                         dgvPedidosEnPreparacion.Rows[j].Visible = false;
                     }
                 } 
-            }
         }
 
 
@@ -63,18 +43,13 @@ namespace FinalizarPreparacionPedido
 
         private void btnFinalizarPedidos_Click(object sender, EventArgs e)
         {
-            GestorFinalizarPreparacionPedido gestor = new GestorFinalizarPreparacionPedido();
-            gestor.observadores.Add(interfazMonitor);
-            gestor.observadores.Add(interfazDispositivoMovil);
-
-
             for (int j = 0; j < dgvPedidosEnPreparacion.Rows.Count; j++)
             {
                 if ((bool)dgvPedidosEnPreparacion.Rows[j].Cells[0].Value && dgvPedidosEnPreparacion.Rows[j].Visible)
                 {
-                    //obs.notificar(int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[4].Value.ToString()), int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[3].Value.ToString()));
                     gestor.cantidadProducto = int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[4].Value.ToString());
                     gestor.numeroMesa = int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[3].Value.ToString());
+                    gestor.confirmarcionElaboracion();
                     dgvPedidosEnPreparacion.Rows[j].Visible = false;
                 }
             }
@@ -89,6 +64,12 @@ namespace FinalizarPreparacionPedido
         private void PantallaFinalizarPreparacionPedido_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            panel4.Visible = false;
         }
     }
 }
