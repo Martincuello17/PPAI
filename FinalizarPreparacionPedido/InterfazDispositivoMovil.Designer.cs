@@ -32,29 +32,29 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblFinalizarPreparacionPedido = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pNotificacion = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblPedidosListos = new System.Windows.Forms.Label();
+            this.iCampana = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvPedidosEnPreparacion = new System.Windows.Forms.DataGridView();
             this.NumeroMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblFechaActual = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.iCampana = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pNotificacion = new System.Windows.Forms.Panel();
-            this.lblPedidosListos = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.pNotificacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iCampana)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosEnPreparacion)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iCampana)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pNotificacion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -88,6 +88,59 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(515, 59);
             this.panel1.TabIndex = 3;
+            // 
+            // pNotificacion
+            // 
+            this.pNotificacion.BackColor = System.Drawing.Color.Silver;
+            this.pNotificacion.Controls.Add(this.pictureBox4);
+            this.pNotificacion.Controls.Add(this.lblPedidosListos);
+            this.pNotificacion.Location = new System.Drawing.Point(90, 11);
+            this.pNotificacion.Name = "pNotificacion";
+            this.pNotificacion.Size = new System.Drawing.Size(315, 39);
+            this.pNotificacion.TabIndex = 2;
+            this.pNotificacion.Visible = false;
+            this.pNotificacion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pNotificacion_MouseClick);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::FinalizarPreparacionPedido.Properties.Resources.logo2;
+            this.pictureBox4.Location = new System.Drawing.Point(273, 2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            // 
+            // lblPedidosListos
+            // 
+            this.lblPedidosListos.AutoSize = true;
+            this.lblPedidosListos.Location = new System.Drawing.Point(1, 13);
+            this.lblPedidosListos.Name = "lblPedidosListos";
+            this.lblPedidosListos.Size = new System.Drawing.Size(255, 13);
+            this.lblPedidosListos.TabIndex = 0;
+            this.lblPedidosListos.Text = "¡Tienes nuevos pedidos listos para servir en la mesa ";
+            // 
+            // iCampana
+            // 
+            this.iCampana.Image = global::FinalizarPreparacionPedido.Properties.Resources.campana2;
+            this.iCampana.Location = new System.Drawing.Point(417, 10);
+            this.iCampana.Name = "iCampana";
+            this.iCampana.Size = new System.Drawing.Size(57, 40);
+            this.iCampana.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iCampana.TabIndex = 1;
+            this.iCampana.TabStop = false;
+            this.iCampana.Visible = false;
+            this.iCampana.Click += new System.EventHandler(this.iCampana_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FinalizarPreparacionPedido.Properties.Resources.logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(35, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // dgvPedidosEnPreparacion
             // 
@@ -152,6 +205,16 @@
             this.label2.Text = "13/10/2020 16:32";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::FinalizarPreparacionPedido.Properties.Resources.logo2;
+            this.pictureBox2.Location = new System.Drawing.Point(227, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(49, 49);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
             // lblFechaActual
             // 
             this.lblFechaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,68 +232,6 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::FinalizarPreparacionPedido.Properties.Resources.logo2;
-            this.pictureBox2.Location = new System.Drawing.Point(227, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(49, 49);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
-            // iCampana
-            // 
-            this.iCampana.Image = global::FinalizarPreparacionPedido.Properties.Resources.campana2;
-            this.iCampana.Location = new System.Drawing.Point(417, 10);
-            this.iCampana.Name = "iCampana";
-            this.iCampana.Size = new System.Drawing.Size(57, 40);
-            this.iCampana.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.iCampana.TabIndex = 1;
-            this.iCampana.TabStop = false;
-            this.iCampana.Visible = false;
-            this.iCampana.Click += new System.EventHandler(this.iCampana_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FinalizarPreparacionPedido.Properties.Resources.logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(35, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pNotificacion
-            // 
-            this.pNotificacion.BackColor = System.Drawing.Color.Silver;
-            this.pNotificacion.Controls.Add(this.pictureBox4);
-            this.pNotificacion.Controls.Add(this.lblPedidosListos);
-            this.pNotificacion.Location = new System.Drawing.Point(90, 11);
-            this.pNotificacion.Name = "pNotificacion";
-            this.pNotificacion.Size = new System.Drawing.Size(315, 39);
-            this.pNotificacion.TabIndex = 2;
-            this.pNotificacion.Visible = false;
-            // 
-            // lblPedidosListos
-            // 
-            this.lblPedidosListos.AutoSize = true;
-            this.lblPedidosListos.Location = new System.Drawing.Point(3, 13);
-            this.lblPedidosListos.Name = "lblPedidosListos";
-            this.lblPedidosListos.Size = new System.Drawing.Size(255, 13);
-            this.lblPedidosListos.TabIndex = 0;
-            this.lblPedidosListos.Text = "¡Tienes nuevos pedidos listos para servir en la mesa ";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::FinalizarPreparacionPedido.Properties.Resources.logo2;
-            this.pictureBox4.Location = new System.Drawing.Point(266, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(39, 36);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 11;
-            this.pictureBox4.TabStop = false;
-            // 
             // InterfazDispositivoMovil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,14 +246,14 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosEnPreparacion)).EndInit();
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iCampana)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pNotificacion.ResumeLayout(false);
             this.pNotificacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iCampana)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosEnPreparacion)).EndInit();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
