@@ -42,19 +42,19 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnFinalizarPedidos = new System.Windows.Forms.Button();
-            this.cmbOrden = new System.Windows.Forms.ComboBox();
             this.dgvPedidosEnPreparacion = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblSeleccionepedidos = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblFechaActual = new System.Windows.Forms.Label();
             this.Listo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreMenu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblSeleccionepedidos = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblFechaActual = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.TiempoEspera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -198,7 +198,6 @@
             // 
             this.panel4.Controls.Add(this.btnCancelar);
             this.panel4.Controls.Add(this.btnFinalizarPedidos);
-            this.panel4.Controls.Add(this.cmbOrden);
             this.panel4.Controls.Add(this.dgvPedidosEnPreparacion);
             this.panel4.Controls.Add(this.groupBox1);
             this.panel4.Location = new System.Drawing.Point(227, 120);
@@ -229,16 +228,6 @@
             this.btnFinalizarPedidos.UseVisualStyleBackColor = true;
             this.btnFinalizarPedidos.Click += new System.EventHandler(this.btnFinalizarPedidos_Click);
             // 
-            // cmbOrden
-            // 
-            this.cmbOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbOrden.FormattingEnabled = true;
-            this.cmbOrden.Location = new System.Drawing.Point(16, 357);
-            this.cmbOrden.Name = "cmbOrden";
-            this.cmbOrden.Size = new System.Drawing.Size(131, 21);
-            this.cmbOrden.TabIndex = 2;
-            this.cmbOrden.Text = "Seleccionar orden";
-            // 
             // dgvPedidosEnPreparacion
             // 
             this.dgvPedidosEnPreparacion.AllowUserToAddRows = false;
@@ -249,42 +238,13 @@
             this.NombreProducto,
             this.NombreMenu,
             this.Cantidad,
-            this.NumeroMesa});
+            this.NumeroMesa,
+            this.TiempoEspera});
             this.dgvPedidosEnPreparacion.Location = new System.Drawing.Point(16, 65);
             this.dgvPedidosEnPreparacion.Name = "dgvPedidosEnPreparacion";
             this.dgvPedidosEnPreparacion.Size = new System.Drawing.Size(652, 271);
             this.dgvPedidosEnPreparacion.TabIndex = 1;
-            // 
-            // Listo
-            // 
-            this.Listo.HeaderText = "Listo";
-            this.Listo.Name = "Listo";
-            this.Listo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Listo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Listo.Width = 35;
-            // 
-            // NombreProducto
-            // 
-            this.NombreProducto.HeaderText = "Nombre del producto";
-            this.NombreProducto.Name = "NombreProducto";
-            this.NombreProducto.Width = 160;
-            // 
-            // NombreMenu
-            // 
-            this.NombreMenu.HeaderText = "Nombre del menú";
-            this.NombreMenu.Name = "NombreMenu";
-            this.NombreMenu.Width = 160;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // NumeroMesa
-            // 
-            this.NumeroMesa.HeaderText = "Número de mesa";
-            this.NumeroMesa.Name = "NumeroMesa";
-            this.NumeroMesa.Width = 150;
+            this.dgvPedidosEnPreparacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidosEnPreparacion_CellClick);
             // 
             // groupBox1
             // 
@@ -318,6 +278,17 @@
             this.panel5.Size = new System.Drawing.Size(919, 78);
             this.panel5.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(742, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 31);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Fecha: Hora:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::FinalizarPreparacionPedido.Properties.Resources.logo2;
@@ -339,16 +310,47 @@
             this.lblFechaActual.Text = "13/10/2020 16:32";
             this.lblFechaActual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // Listo
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(742, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 31);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Fecha: Hora:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Listo.HeaderText = "Listo";
+            this.Listo.Name = "Listo";
+            this.Listo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Listo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Listo.Width = 35;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.HeaderText = "Nombre del producto";
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.ReadOnly = true;
+            this.NombreProducto.Width = 150;
+            // 
+            // NombreMenu
+            // 
+            this.NombreMenu.HeaderText = "Nombre del menú";
+            this.NombreMenu.Name = "NombreMenu";
+            this.NombreMenu.ReadOnly = true;
+            this.NombreMenu.Width = 150;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 60;
+            // 
+            // NumeroMesa
+            // 
+            this.NumeroMesa.HeaderText = "Número de mesa";
+            this.NumeroMesa.Name = "NumeroMesa";
+            this.NumeroMesa.ReadOnly = true;
+            this.NumeroMesa.Width = 110;
+            // 
+            // TiempoEspera
+            // 
+            this.TiempoEspera.HeaderText = "Tiempo espera";
+            this.TiempoEspera.Name = "TiempoEspera";
+            this.TiempoEspera.ReadOnly = true;
             // 
             // PantallaFinalizarPreparacionPedido
             // 
@@ -389,7 +391,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblSeleccionepedidos;
         private System.Windows.Forms.DataGridView dgvPedidosEnPreparacion;
-        private System.Windows.Forms.ComboBox cmbOrden;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnFinalizarPedidos;
         private System.Windows.Forms.Panel panel5;
@@ -403,12 +404,13 @@
         private System.Windows.Forms.Label lblFinalizarPreparacionPedido;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Listo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreMenu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroMesa;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TiempoEspera;
     }
 }
 
