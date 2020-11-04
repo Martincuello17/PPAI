@@ -14,10 +14,6 @@ namespace FinalizarPreparacionPedido
     {
         public int cantidadProductos { get; set; }
         public int numeroMesa { get; set; }
-        public void suscribir(ISujetoDetallePedido sujeto)
-        {
-            sujeto.suscribir(this);
-        }
 
         public void actualizar(int numeroMesa, int cantidadProducto)
         {
@@ -31,12 +27,11 @@ namespace FinalizarPreparacionPedido
             Console.Beep();
         }
 
-        public InterfazDispositivoMovil(ISujetoDetallePedido sujeto)
+        public InterfazDispositivoMovil()
         {
             InitializeComponent();
             lblFechaActual.Text = DateTime.Now.ToString("G");
             dgvPedidosEnPreparacion.Visible = false;
-            suscribir(sujeto);
 
         }
 

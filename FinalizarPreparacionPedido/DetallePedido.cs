@@ -25,17 +25,5 @@ namespace FinalizarPreparacionPedido
             this.producto = producto;
             this.pedido = pedido;
         }
-
-
-
-
-        //cantidad, precio, producto
-        public delegate void cantidadDelegate();
-
-        public event cantidadDelegate eleccionCantidad;
-        public object elegirCambioCantidad
-        {
-            set { eleccionCantidad(); }
-        }
     }
 }
