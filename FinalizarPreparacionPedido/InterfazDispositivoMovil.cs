@@ -21,10 +21,12 @@ namespace FinalizarPreparacionPedido
 
         public void actualizar(int numeroMesa, int cantidadProducto)
         {
+            dgvPedidosEnPreparacion.Visible = false;
+            pNotificacion.Visible = false;
             this.cantidadProductos = cantidadProducto;
             this.numeroMesa = numeroMesa;
             dgvPedidosEnPreparacion.Rows.Add(numeroMesa, cantidadProducto);
-            lblPedidosListos.Text += numeroMesa.ToString();
+            lblPedidosListos.Text = "¡Tienes nuevos pedidos listos para servir en la mesa " + numeroMesa.ToString() + "!";
             iCampana.Visible = true;
             Console.Beep();
         }
@@ -33,14 +35,19 @@ namespace FinalizarPreparacionPedido
         {
             InitializeComponent();
             lblFechaActual.Text = DateTime.Now.ToString("G");
+            dgvPedidosEnPreparacion.Visible = false;
             suscribir(sujeto);
 
         }
 
         private void iCampana_Click(object sender, EventArgs e)
         {
-            dgvPedidosEnPreparacion.Visible = true;
             pNotificacion.Visible = true;
+        }
+
+        private void pNotificacion_MouseClick(object sender, MouseEventArgs e)
+        {
+            dgvPedidosEnPreparacion.Visible = true;
         }
     }
 }
