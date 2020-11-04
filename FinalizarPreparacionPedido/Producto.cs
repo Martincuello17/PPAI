@@ -5,8 +5,14 @@ namespace FinalizarPreparacionPedido
 {
     public class Producto
     {
-        public int cantComensales { get; set; }
-        public DateTime fechaHoraPed { get; set; }
-        public int nroPedido { get; set; }
+        public DateTime fechaCreacion { get; set; }
+        public string nombre { get; set; }
+        public float precio { get; set; }
+        public DateTime tiempoPresen { get; set; }
+
+        public Producto(string nombre)
+        {
+            this.nombre = nombre;
+        }
     }
 }

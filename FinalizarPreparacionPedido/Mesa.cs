@@ -10,5 +10,10 @@
         public int forma { get; set; }
         public int ordenEnPlano { get; set; }
         public Pedido pedido { get; set; }
+
+        public Mesa(int numero)
+        {
+            this.numero = numero;
+        }
     }
 }

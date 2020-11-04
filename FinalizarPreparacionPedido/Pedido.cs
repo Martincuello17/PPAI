@@ -10,5 +10,12 @@ namespace FinalizarPreparacionPedido
         public DateTime fechaHoraPed { get; set; }
         public int historialEstado { get; set; }
         public int nroPedido { get; set; }
+        public Mesa mesa { get; set; }
+
+        public Pedido(int nroPedido, Mesa mesa)
+        {
+            this.nroPedido = nroPedido;
+            this.mesa = mesa;
+        }
     }
 }

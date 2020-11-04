@@ -43,6 +43,7 @@ namespace FinalizarPreparacionPedido
         private void iCampana_Click(object sender, EventArgs e)
         {
             pNotificacion.Visible = true;
+            dgvPedidosEnPreparacion.Visible = true;
         }
 
         private void pNotificacion_MouseClick(object sender, MouseEventArgs e)
