@@ -18,10 +18,12 @@ namespace FinalizarPreparacionPedido
 
         public GestorFinalizarPreparacionPedido()
         {
-            InterfazDispositivoMovil interfazDispositivoMovil = new InterfazDispositivoMovil(this);
+            InterfazDispositivoMovil interfazDispositivoMovil = new InterfazDispositivoMovil();
             interfazDispositivoMovil.Show();
-            InterfazMonitor interfazMonitor = new InterfazMonitor(this);
+            InterfazMonitor interfazMonitor = new InterfazMonitor();
             interfazMonitor.Show();
+            suscribir(interfazDispositivoMovil);
+            suscribir(interfazMonitor);
         }
 
         public void suscribir(IObservadorDetallePedido obs)
@@ -43,8 +45,8 @@ namespace FinalizarPreparacionPedido
         {
             for (int i = 0; i < observadores.Count; i++)
             {
-                IObservadorDetallePedido obs = (IObservadorDetallePedido)observadores[i];
-                obs.actualizar(numeroMesa, cantidadProducto);
+
+                observadores[i].actualizar(numeroMesa, cantidadProducto);
             }
         }
 

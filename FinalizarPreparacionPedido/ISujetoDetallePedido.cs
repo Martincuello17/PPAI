@@ -9,5 +9,6 @@ namespace FinalizarPreparacionPedido
     public interface ISujetoDetallePedido
     {
         void suscribir(IObservadorDetallePedido obs);
+        void notificar();
     }
 }

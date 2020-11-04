@@ -14,19 +14,11 @@ namespace FinalizarPreparacionPedido
     {
         public int cantidadProductos { get; set; }
         public int numeroMesa { get; set; }
-        public void suscribir(ISujetoDetallePedido sujeto)
-        {
-            sujeto.suscribir(this);
-        }
-        public void notificar(int numeroMesa, int cantidad)
-        {
-            dgvPedidosEnPreparacion.Rows.Add(numeroMesa, cantidad);
-        }
-        public InterfazMonitor(ISujetoDetallePedido sujeto)
+
+        public InterfazMonitor()
         {
             InitializeComponent();
             lblFechaActual.Text = DateTime.Now.ToString("G");
-            suscribir(sujeto);
         }
 
         private void InterfazMonitor_Load(object sender, EventArgs e)
