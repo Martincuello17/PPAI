@@ -36,8 +36,9 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblFechaActual = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosEnPreparacion)).BeginInit();
@@ -124,26 +125,38 @@
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(658, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 31);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Fecha: 13/10/2020 Hora: 16:32";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
-            this.panel5.Controls.Add(this.pictureBox2);
             this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.lblFechaActual);
+            this.panel5.Controls.Add(this.pictureBox2);
             this.panel5.Location = new System.Drawing.Point(1, 395);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(818, 78);
             this.panel5.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(616, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 31);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Fecha: Hora:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblFechaActual
+            // 
+            this.lblFechaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaActual.ForeColor = System.Drawing.Color.Yellow;
+            this.lblFechaActual.Location = new System.Drawing.Point(674, 27);
+            this.lblFechaActual.Name = "lblFechaActual";
+            this.lblFechaActual.Size = new System.Drawing.Size(104, 31);
+            this.lblFechaActual.TabIndex = 9;
+            this.lblFechaActual.Text = "13/10/2020 16:32";
+            this.lblFechaActual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // InterfazMonitor
             // 
@@ -176,9 +189,10 @@
         private System.Windows.Forms.DataGridView dgvPedidosEnPreparacion;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroMesa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblFechaActual;
     }
 }

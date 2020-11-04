@@ -112,5 +112,14 @@
   <ItemGroup>
     <None Include="logo2.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\campana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\campana_preview_rev_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\campana2.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

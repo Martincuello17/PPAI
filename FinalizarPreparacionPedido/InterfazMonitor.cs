@@ -25,6 +25,7 @@ namespace FinalizarPreparacionPedido
         public InterfazMonitor(ISujetoDetallePedido sujeto)
         {
             InitializeComponent();
+            lblFechaActual.Text = DateTime.Now.ToString("G");
             suscribir(sujeto);
         }
 

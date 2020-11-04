@@ -54,6 +54,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblFechaActual = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -309,6 +310,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
+            this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.pictureBox2);
             this.panel5.Controls.Add(this.lblFechaActual);
             this.panel5.Location = new System.Drawing.Point(-1, 539);
@@ -330,12 +332,23 @@
             // 
             this.lblFechaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaActual.ForeColor = System.Drawing.Color.Yellow;
-            this.lblFechaActual.Location = new System.Drawing.Point(775, 24);
+            this.lblFechaActual.Location = new System.Drawing.Point(800, 34);
             this.lblFechaActual.Name = "lblFechaActual";
-            this.lblFechaActual.Size = new System.Drawing.Size(118, 31);
+            this.lblFechaActual.Size = new System.Drawing.Size(104, 31);
             this.lblFechaActual.TabIndex = 0;
-            this.lblFechaActual.Text = "Fecha: 13/10/2020 Hora: 16:32";
-            this.lblFechaActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFechaActual.Text = "13/10/2020 16:32";
+            this.lblFechaActual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(742, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 31);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Fecha: Hora:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PantallaFinalizarPreparacionPedido
             // 
@@ -395,6 +408,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreMenu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroMesa;
+        private System.Windows.Forms.Label label1;
     }
 }
 

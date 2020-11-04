@@ -24,14 +24,23 @@ namespace FinalizarPreparacionPedido
             this.cantidadProductos = cantidadProducto;
             this.numeroMesa = numeroMesa;
             dgvPedidosEnPreparacion.Rows.Add(numeroMesa, cantidadProducto);
+            lblPedidosListos.Text += numeroMesa.ToString();
+            iCampana.Visible = true;
             Console.Beep();
         }
 
         public InterfazDispositivoMovil(ISujetoDetallePedido sujeto)
         {
             InitializeComponent();
+            lblFechaActual.Text = DateTime.Now.ToString("G");
             suscribir(sujeto);
 
+        }
+
+        private void iCampana_Click(object sender, EventArgs e)
+        {
+            dgvPedidosEnPreparacion.Visible = true;
+            pNotificacion.Visible = true;
         }
     }
 }

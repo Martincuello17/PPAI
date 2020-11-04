@@ -16,6 +16,7 @@ namespace FinalizarPreparacionPedido
         {
             InitializeComponent();
             cargarGrilla();
+            lblFechaActual.Text = DateTime.Now.ToString("G");
         }
         public GestorFinalizarPreparacionPedido gestor = new GestorFinalizarPreparacionPedido();
         
@@ -43,15 +44,22 @@ namespace FinalizarPreparacionPedido
 
         private void btnFinalizarPedidos_Click(object sender, EventArgs e)
         {
-            for (int j = 0; j < dgvPedidosEnPreparacion.Rows.Count; j++)
+            if (dgvPedidosEnPreparacion.Rows.OfType<DataGridViewRow>().Any(x => Convert.ToBoolean(x.Cells[0].Value)))
             {
-                if ((bool)dgvPedidosEnPreparacion.Rows[j].Cells[0].Value && dgvPedidosEnPreparacion.Rows[j].Visible)
+                for (int j = 0; j < dgvPedidosEnPreparacion.Rows.Count; j++)
                 {
-                    gestor.cantidadProducto = int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[4].Value.ToString());
-                    gestor.numeroMesa = int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[3].Value.ToString());
-                    gestor.confirmarcionElaboracion();
-                    dgvPedidosEnPreparacion.Rows[j].Visible = false;
+                    if ((bool)dgvPedidosEnPreparacion.Rows[j].Cells[0].Value && dgvPedidosEnPreparacion.Rows[j].Visible)
+                    {
+                        gestor.cantidadProducto = int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[4].Value.ToString());
+                        gestor.numeroMesa = int.Parse(dgvPedidosEnPreparacion.Rows[j].Cells[3].Value.ToString());
+                        gestor.confirmarcionElaboracion();
+                        dgvPedidosEnPreparacion.Rows[j].Visible = false;
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione al menos un pedido para finalizar");
             }
         }
 
